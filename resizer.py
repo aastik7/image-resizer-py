@@ -1,15 +1,15 @@
 from PIL import Image
 
-def resize_image(size1, size2):
+def resize_image(width, height ):
     image = Image.open('cat.png')
 
 
     print ( f"Current size: {image.size}" )
 
-    resized_image = image.resize((size1,size2))
+    resized_image = image.resize((width,height))
 
-    resized_image.save('cat-resized-image.png')
+    resized_image.save(f'resized-image_{width}x{height}.png' )
 
-size1 = int(input("Enter Width: "))
-size2 = int(input("Enter Length: "))
-resize_image(size1,size2)
+width = int(input("Enter Width: "))
+height = int(input("Enter Height: "))
+resize_image(size1,height)
